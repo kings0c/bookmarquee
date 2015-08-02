@@ -1,6 +1,6 @@
 ## Bookmarquee
 
-Online bookmark manager with tagging support - Built using Laravel 5.
+Online bookmark manager with tagging support - Built using Laravel 5.1.
 
 ## Project Status
 
