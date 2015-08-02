@@ -4,7 +4,7 @@
         <ul class="left">
             <li><a href="{{ URL::to('/') }}">Home</a></li>
             <li><a href="{{ URL::to('/') }}/dashboard">Dashboard</a></li>
-            <li><a href="{{ URL::to('/bookmark') }}">Bookmarks</a></li>
+            <li><a href="{{ URL::to('/bookmarks') }}">Bookmarks</a></li>
         </ul>
         <ul class="right">
             <li><a href="{{ URL::to('/') }}/auth/logout">Logout</a></li>

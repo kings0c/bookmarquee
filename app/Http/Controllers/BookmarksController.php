@@ -17,7 +17,7 @@ class BookmarksController extends BaseController {
 
     protected $redirectPath = "/dashboard";
     protected $bookmarkEditPath = "/bookmark/edit/";
-    protected $bookmarksPath = "/bookmark";
+    protected $bookmarksPath = "/bookmarks";
 
     public function index() {
         $bookmarks = Bookmark::all();
@@ -195,7 +195,7 @@ class BookmarksController extends BaseController {
      */
     
     public function postCreate(Request $request) {
-        //Make sure url and colour are provided (TODO: more validation, ie colour is a hex code)
+        //Make sure url is provided (TODO: ensure valid url)
         $validator = $this->validator($request->all());
 
         if ($validator->fails()) {
@@ -211,6 +211,7 @@ class BookmarksController extends BaseController {
         
         $data['title'] = $page->getTitle();
         $data['content'] = $page->getContent();
+        $data['colour'] = "F2F2F2";
         
         //Insert a new Bookmark into db and return it's ID
         $bookmarkID = $this->create($data)->bookmark_id;

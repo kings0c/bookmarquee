@@ -29,7 +29,7 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Bookmark routes
-Route::get('bookmark', 'BookmarksController@index');
+Route::get('bookmarks', 'BookmarksController@index');
 Route::get('bookmark/{id}', 'BookmarksController@find');
 Route::get('bookmark/edit/{id}', [
     'middleware' => 'auth',

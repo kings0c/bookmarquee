@@ -32,10 +32,12 @@
             <p>Here you can do lots of stuff.</p>
         </div>
     </div>
-    
+    <?php $i = 0; ?>
     @foreach ($bookmarks as $bookmark)
-    <div class="row">
-        <div class="panel column small-10 small-offset-1 bookmark-item">
+    @if($i == 0 || $i % 2 == 0)
+        <div class="row">
+    @endif
+        <div class="panel column small-6 bookmark-item" style="background: #{{ $bookmark->colour }}">
             <h4><a href="{{ $bookmark->url }}">{{ $bookmark->title }}</a></h4>
             <p>{{ $bookmark->url }}</p>
             <a class="edit-bookmark" href="{{ URL::to('bookmark/edit') . "/" . $bookmark->bookmark_id }}"><i class="material-icons">mode_edit</i></a>
@@ -45,8 +47,13 @@
                 </label>
             </div>
         </div>
+            <?php $i++; ?>
+    @if( ($i != 0 && $i % 2 == 0) || $i == sizeof($bookmarks) )
     </div>
+    @endif
+    
     @endforeach
+    
 @stop
 
 @section('body-scripts')
